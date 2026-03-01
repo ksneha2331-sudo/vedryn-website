@@ -48,3 +48,8 @@ footer {
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+#send-btn {
+    align-self: center;   /* prevents stretching */
+    width: auto;          /* keeps natural size */
+}
