@@ -22,26 +22,29 @@ footer {
     padding: 20px;
 }
 
-/* Send Button Styling */
-#send-btn {
+/* ===== Button Styling (Matches Primary Buttons) ===== */
+
+.btn {
+    display: inline-block;
     padding: 12px 28px;
     border-radius: 8px;
-    border: none;
+    text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: #2563eb;
     color: white;
-    cursor: not-allowed;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+}
+
+/* Disabled Send Button */
+#send-btn:disabled {
     opacity: 0.6;
-    transition: all 0.3s ease;
-}
-
-/* Enabled state */
-#send-btn.active {
-    cursor: pointer;
-    opacity: 1;
-}
-
-#send-btn.active:hover {
-    transform: translateY(-2px);
+    cursor: not-allowed;
 }
