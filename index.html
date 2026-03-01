@@ -295,19 +295,47 @@
 <script>
   (function(){
     emailjs.init("Obc7_GV79DqZbaqOu");
-  })();
+  })();  
 
-  document.getElementById("contact-form")
-    .addEventListener("submit", function(event) {
-      event.preventDefault();
-      emailjs.sendForm("service_6a4gf3f", "template_tycrlm7", this)
-        .then(function() {
-          alert("Message sent successfully!");
-        }, function(error) {
-          alert("Failed to send message.");
-          console.log(error);
-        });
+  const form = document.getElementById("contact-form");
+  const sendBtn = document.getElementById("send-btn");
+  const inputs = form.querySelectorAll("input, textarea");
+
+  function toggleButton() {
+    let allFilled = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === "") {
+        allFilled = false;
+      }
     });
+
+    if (allFilled) {
+      sendBtn.disabled = false;
+      sendBtn.classList.add("active");
+    } else {
+      sendBtn.disabled = true;
+      sendBtn.classList.remove("active");
+    }
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", toggleButton);
+  });
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_6a4gf3f", "template_tycrlm7", this)
+      .then(function() {
+        alert("Message sent successfully!");
+        form.reset();
+        toggleButton();
+      }, function(error) {
+        alert("Failed to send message.");
+        console.log(error);
+        });
+    });  
 </script>
 
 </body>
