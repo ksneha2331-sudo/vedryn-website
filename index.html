@@ -290,5 +290,26 @@
         © 2026 Vedryn. All rights reserved.
     </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("Obc7_GV79DqZbaqOu");
+  })();
+
+  document.getElementById("contact-form")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_93gpnnx", "template_ut7pace", this)
+        .then(function() {
+          alert("Message sent successfully!");
+        }, function(error) {
+          alert("Failed to send message.");
+          console.log(error);
+        });
+    });
+</script>
+   
 </body>
 </html>
