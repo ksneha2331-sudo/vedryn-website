@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vedryn | Intelligent Digital Solutions</title>
+    <title>Vedryn Tech Solutions| Intelligent Digital Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -53,16 +53,44 @@
 
         .hero-text {
             max-width: 600px;
+            flex: 1;
         }
 
         .hero h1 {
             font-size: 48px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            align-items: center;
         }
 
         .hero p {
             color: #d1d5db;
             margin-bottom: 30px;
+        }
+
+        /* NEW: Hero Image */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 420px;
+            object-fit: contain;
+        }
+        
+        /* Mobile fix */
+        @media(max-width: 768px){
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
         }
 
         .btn {
@@ -140,6 +168,24 @@
 
         .why-box {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* WHY ICONS */
+        .why-icon {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 5px;
+            object-fit: contain;
+            background: #eef2ff; /* SAME as .why section */
+            padding: 0.5px;
+            border-radius: 2px;
+        }
+        .why-box:hover {
+            transform: translateY(-6px);
+            transition: 0.3s ease;
         }
 
         /* PARTNERSHIP */
@@ -191,10 +237,69 @@
                 font-size: 36px;
             }
         }
+
+        /* HEADER */
+        .logo-box {
+            background: transparent;
+            padding: 0;
+        }
+        .main-header {
+            width: 100%;
+            background: white;
+            padding: 0.5px 0.1%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo + Name container */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Logo box to normalize background */
+        .logo-box {
+            background: white;
+            padding: 6px;
+            border-radius: 8px;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+        }
+
+        /* Logo image */
+        .logo {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Company Name */
+        .company-name {
+            color: #0c2647;
+            font-size: 40px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        /* Optional subtle brand highlight */
+        .company-name span {
+            color: #3060a0;
+        }
     </style>
 </head>
 
 <body>
+    <!-- HEADER -->
+    <header class="main-header">
+    <div class="logo-container">
+        <div class="logo-box">
+            <img src="vedryn-logo.PNG" alt="Vedryn Logo" class="logo">
+        </div>
+        <span class="company-name">Ved<span>ryn</span> Tech Solutions</span>
+    </div>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
@@ -203,6 +308,10 @@
             <p>Vedryn delivers scalable ERP, HR, AI, and enterprise technology solutions tailored for growing organizations.</p>
             <a href="#services" class="btn btn-primary">Explore Services</a>
             <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="hero-image.png" alt="Digital Solutions Illustration">
         </div>
     </section>
 
@@ -243,28 +352,40 @@
         </div>
     </section>
 
+
     <!-- WHY US -->
     <section class="why">
-        <h2>Why Choose Vedryn</h2>
+        <h2>Why Choose Vedryn ?</h2>
+
         <div class="why-grid">
+
             <div class="why-box">
+                <img src="scalable.png" alt="Scalable Architecture" class="why-icon">
                 <h3>Scalable Architecture</h3>
                 <p>Built to grow with your business.</p>
             </div>
+
             <div class="why-box">
+                <img src="enterprise.png" alt="Enterprise Ready" class="why-icon">
                 <h3>Enterprise Ready</h3>
                 <p>Reliable and production-grade solutions.</p>
             </div>
+
             <div class="why-box">
+                <img src="ai.png" alt="AI Integrated" class="why-icon">
                 <h3>AI Integrated</h3>
                 <p>Modern intelligence embedded into systems.</p>
             </div>
+
             <div class="why-box">
+                <img src="partnership.png" alt="Long-Term Partnership" class="why-icon">
                 <h3>Long-Term Partnership</h3>
                 <p>Focused on sustainable technology collaboration.</p>
             </div>
+
         </div>
     </section>
+
 
     <!-- PARTNERSHIP -->
     <section class="partner">
